@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Car, Zap, Shield, Clock, ChevronRight, Wrench, Search, CheckCircle } from 'lucide-react'
+import { Car, Zap, Shield, Clock, ChevronRight, Wrench, Search, CheckCircle, Crown, Check } from 'lucide-react'
 
 export default function HomePage() {
   return (
@@ -13,12 +13,20 @@ export default function HomePage() {
             </div>
             <span className="text-xl font-bold tracking-tight">AutoDiag</span>
           </div>
-          <Link
-            href="/diagnose"
-            className="bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
-          >
-            Start Diagnosing
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/pricing"
+              className="text-slate-300 hover:text-white text-sm font-medium px-3 py-2 transition-colors"
+            >
+              Pricing
+            </Link>
+            <Link
+              href="/diagnose"
+              className="bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+            >
+              Start Diagnosing
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -107,6 +115,57 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing teaser */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-800 mb-3">Simple Pricing</h2>
+            <p className="text-slate-500">Start free. Upgrade to Pro for unlimited diagnostics.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {/* Free */}
+            <div className="bg-slate-50 rounded-2xl border border-slate-200 p-8">
+              <h3 className="text-lg font-bold text-slate-800 mb-1">Free</h3>
+              <div className="mb-5">
+                <span className="text-4xl font-extrabold text-slate-800">$0</span>
+                <span className="text-slate-500">/month</span>
+              </div>
+              <ul className="space-y-2.5 mb-6">
+                {['Basic diagnostics for all cars', 'Step-by-step troubleshooting', '3 diagnoses per day'].map((f) => (
+                  <li key={f} className="flex items-start gap-2 text-sm text-slate-600">
+                    <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" /> {f}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/diagnose" className="block text-center w-full border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 font-semibold py-3 rounded-xl transition-colors">
+                Get Started Free
+              </Link>
+            </div>
+            {/* Pro */}
+            <div className="bg-slate-900 rounded-2xl border-2 border-blue-500 p-8 relative text-white">
+              <div className="flex items-center gap-2 mb-1">
+                <Crown className="w-5 h-5 text-blue-400" />
+                <h3 className="text-lg font-bold">Pro</h3>
+              </div>
+              <div className="mb-5">
+                <span className="text-4xl font-extrabold">$50</span>
+                <span className="text-slate-400">/month</span>
+              </div>
+              <ul className="space-y-2.5 mb-6">
+                {['Unlimited AI-powered diagnoses', 'Maintenance & repair tracking', 'Export reports (PDF)', 'Early access to mobile app'].map((f) => (
+                  <li key={f} className="flex items-start gap-2 text-sm text-slate-200">
+                    <Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" /> {f}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/pricing" className="flex items-center justify-center gap-2 w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 rounded-xl transition-colors">
+                <Crown className="w-4 h-4" /> Upgrade to Pro
+              </Link>
+            </div>
           </div>
         </div>
       </section>
