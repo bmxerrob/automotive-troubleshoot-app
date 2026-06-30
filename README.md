@@ -38,7 +38,9 @@ AI-powered car diagnostic and troubleshooting for all makes and models (1990–2
 - Oil leaks
 - Tire issues
 - Exhaust & smoke
-
+- Crank no start 
+- start then engine dies 
+- engine runs ruff stumbles
 ## Quick Start
 
 ```bash
@@ -94,3 +96,4 @@ $50/month subscription. Until keys are set, the button shows a friendly "not con
 - [ ] Repair history log
 - [ ] Mechanic finder by location
 - [ ] Community Q&A
+- [ ] tuner option to adjust engine timing and fuel delivery 
